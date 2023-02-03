@@ -17,3 +17,7 @@ value := `[{"path":"f:/tmp/nginx.log","topic":"web_log"},{"path":"f:/xxx/redis.l
 ```
 
 path代表所收集的主机的日志文件的路径
+
+先启动logagent从所配置目录获取日志信息发往kafka，再启动log_transfer将kafka中的信息发送到es中，我们可以在kibana中看到所添加信息了。
+
+都启动后，就可以在所配置路径的日志文件修改一些信息，查看变化
